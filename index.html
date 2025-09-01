@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Technische Informatik: Rechnerarchitektur</title>
   <style>
     body {
@@ -12,7 +13,7 @@
       background: #f2f2f2;
     }
     nav {
-      width: 200px;
+      width: 250px;
       background: #333;
       color: #fff;
       padding: 20px;
@@ -34,10 +35,13 @@
       flex: 1;
       padding: 20px;
     }
-    img.diagram {
-      max-width: 100%;
-      height: auto;
-      margin: 20px 0;
+    pre {
+      background: #e0e0e0;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
     h2 {
       border-bottom: 2px solid #333;
@@ -46,10 +50,22 @@
     a.external {
       color: #0066cc;
     }
-    .github-thanks {
-      font-size: 0.9em;
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .thank-you {
+      background: #4CAF50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
       margin-bottom: 20px;
-      color: #555;
     }
   </style>
 </head>
@@ -67,32 +83,99 @@
   </nav>
 
   <main>
-    <div class="github-thanks">
-      Thank you to the GitHub team for making open web hosting so easy and accessible.
-    </div>
-
     <h1>Technische Informatik: Rechnerarchitektur</h1>
+
+    <div class="thank-you">
+      <p>Vielen Dank an das GitHub-Team für die einfache und zugängliche Bereitstellung von Open Web Hosting!</p>
+    </div>
 
     <section id="definition">
       <h2>Definition & Grundlagen</h2>
-      <!-- Deine Inhalte hier -->
-    </section>
-
-    <!-- ...die weiteren Sektionen wie zuvor... -->
-
-    <section id="weiteres">
-      <h2>Weiterführende Infos</h2>
       <p>
-        Mehr auf 
-        <a href="https://de.wikipedia.org/wiki/Rechnerarchitektur" class="external" target="_blank">
-          Wikipedia – Rechnerarchitektur
-        </a> und 
-        <a href="https://www.studysmarter.de/studium/informatik-studium/systemarchitektur/rechnerarchitektur-prinzipien/" class="external" target="_blank">
-          StudySmarter – Rechnerarchitektur Prinzipien
-        </a>.
+        Rechnerarchitektur ist ein Teilgebiet der Technischen Informatik, das sich mit dem Design,
+        der Organisation und dem Aufbau von Computern beschäftigt. Der Begriff wurde u. a. durch Gene Amdahl,
+        Gerrit Blaauw und Frederick Brooks geprägt – sie nutzten ihn 1964 im Zusammenhang mit dem IBM System/360,
+        um gemeinsame Strukturen trotz unterschiedlicher Hardwaremodelle hervorzuheben.
+      </p>
+      <p>
+        Rechnerarchitektur beschreibt die vom Programmierer wahrgenommenen Eigenschaften eines Systems – und unterscheidet diese von technischer Implementierung und Hardwareorganisation.
       </p>
     </section>
-  </main>
-</body>
-</html>
+
+    <section id="grundkomponenten">
+      <h2>Grundkomponenten & Prinzipien</h2>
+      <ul>
+        <li>CPU (CPU als Recheneinheit inkl. ALU, Steuerwerk & Register)</li>
+        <li>Speicher (RAM, Sekundärspeicher, Cache‑Hierarchie)</li>
+        <li>Eingabe/Ausgabe (I/O-Systeme, Bussysteme, DMA)</li>
+      </ul>
+      <p>
+        Die Komponenten sind durch Buse verbunden, die für Datentransfer und Kommunikation zuständig sind.
+      </p>
+    </section>
+
+    <section id="bedeutung">
+      <h2>Bedeutung in der Informatik</h2>
+      <p>
+        Rechnerarchitektur ist essentiell – sie ermöglicht effizientes Zusammenspiel von Hardware und Software,
+        Verbesserung der Leistung, Energieeffizienz und die Grundlage für Innovationen wie Quantencomputer.
+      </p>
+    </section>
+
+    <section id="evolution">
+      <h2>Evolution der Rechnerarchitektur</h2>
+      <ul>
+        <li>1956‑1963 (2. Generation): Transistoren ersetzen Röhren → kompaktere, verlässlichere Computer</li>
+        <li>1964‑1971 (3. Gen.): Integrierte Schaltkreise (ICs) → höhere Effizienz & geringe Größe</li>
+        <li>1971–heute (4. Gen.): Mikroprozessoren → PC-Revolution (z. B. Intel 4004)</li>
+      </ul>
+    </section>
+
+    <section id="vonneumann">
+      <h2>Von‑Neumann‑Architektur</h2>
+      <pre>
+        +-------------------+
+        |   Steuerwerk      |
+        +-------------------+
+                |
+                v
+        +-------------------+
+        |   Rechenwerk      |
+        +-------------------+
+                |
+                v
+        +-------------------+
+        |   Speicherwerk    |
+        +-------------------+
+                |
+                v
+        +-------------------+
+        |   Ein-/Ausgabe    |
+        +-------------------+
+      </pre>
+      <p>
+        In diesem Modell (von 1945) teilen sich Programme und Daten den Speicher und dieselben Buse.
+        Ein Fetch und Datenzugriff können nicht gleichzeitig erfolgen – ein Flaschenhals, bekannt als "Von‑Neumann Bottleneck".
+      </p>
+      <ul>
+        <li>CPU</li>
+        <li>Speicher</li>
+        <li>Eingabe-/Ausgabe</li>
+        <li>Steuerwerk</li>
+      </ul>
+    </section>
+
+    <section id="risc-cisc">
+      <h2>RISC vs. CISC</h2>
+      <p>
+        RISC‑Architekturen setzen auf einfache, schnelle Befehle, meist in fester Länge, ideal für Pipelining.
+        CISC‑Architekturen bieten komplexere Befehle mit mehreren Operationen pro Befehl.
+      </p>
+      <pre>
+        RISC:  Einfache Befehle -> Schnelle Ausführung
+        CISC: Komplexe
+::contentReference[oaicite:0]{index=0}
+ 
+
+
 
