@@ -3,85 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <title>Technische Informatik: Rechnerarchitektur</title>
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f2f2f2;
+    }
+    nav {
+      width: 200px;
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    img.diagram {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+    h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+    a.external {
+      color: #0066cc;
+    }
+    .github-thanks {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <h1>Technische Informatik: Rechnerarchitektur</h1>
+  <nav>
+    <h3>Inhaltsverzeichnis</h3>
+    <a href="#definition">Definition & Grundlagen</a>
+    <a href="#grundkomponenten">Grundkomponenten</a>
+    <a href="#bedeutung">Bedeutung</a>
+    <a href="#evolution">Evolution</a>
+    <a href="#vonneumann">Von‑Neumann‑Architektur</a>
+    <a href="#risc-cisc">RISC vs. CISC</a>
+    <a href="#pipeline-cache">Pipeline & Cache</a>
+    <a href="#weiteres">Weiterführende Infos</a>
+  </nav>
 
-  <section>
-    <h2>Aufbau</h2>
-    <ul>
-      <li>Definition</li>
-      <li>Grundkomponenten</li>
-      <li>Bedeutung der Rechnerarchitektur in der Informatik</li>
-      <li>Evolution der Rechnerarchitektur</li>
-      <li>Rechnerarchitektur von Neumann erklärt</li>
-    </ul>
-  </section>
+  <main>
+    <div class="github-thanks">
+      Thank you to the GitHub team for making open web hosting so easy and accessible.
+    </div>
 
-  <section>
-    <h2>Einleitung</h2>
-    <p>
-      Behandelt den Aufbau und die Funktionsweise von Computern, einschließlich Hardwarekomponenten,
-      Prozessoren und Speichern. Die Rechnerarchitektur ist das Herzstück deines Computers.
-      Sie definiert, wie Systemkomponenten miteinander kommunizieren und zusammenarbeiten, um Aufgaben zu erfüllen.
-    </p>
-    <p>
-      Sie umfasst die physische Anordnung der Hardware sowie die Logik und Struktur, die bestimmen,
-      wie Daten verarbeitet, gespeichert und übertragen werden.
-    </p>
-  </section>
+    <h1>Technische Informatik: Rechnerarchitektur</h1>
 
-  <section>
-    <h2>Grundkomponenten eines PCs</h2>
-    <ol>
-      <li>GPU (Graphics Processing Unit) – Grafikkarte</li>
-      <li>RAM (Random Access Memory) – Arbeitsspeicher</li>
-      <li>CPU (Central Processing Unit) – Prozessor</li>
-    </ol>
-    <p>Diese Komponenten arbeiten zusammen, um Aufgaben effektiv zu lösen.</p>
-  </section>
+    <section id="definition">
+      <h2>Definition & Grundlagen</h2>
+      <!-- Deine Inhalte hier -->
+    </section>
 
-  <section>
-    <h2>Bedeutung der Rechnerarchitektur in der Informatik</h2>
-    <p>
-      Die Rechnerarchitektur spielt eine zentrale Rolle in der Informatik.
-      Sie ermöglicht es uns, die Funktionsweise von Computern zu verstehen und effiziente,
-      leistungsstarke Systeme zu entwerfen. Entwickler können optimierte Software erstellen,
-      die spezifisch auf die Hardware abgestimmt ist.
-    </p>
-    <ul>
-      <li>Ingenieure können leistungsfähigere und effizientere Computer bauen.</li>
-      <li>Forschende können innovative Computing‑Technologien, wie Quantencomputer, vorantreiben.</li>
-    </ul>
-  </section>
+    <!-- ...die weiteren Sektionen wie zuvor... -->
 
-  <section>
-    <h2>Evolution der Rechnerarchitektur</h2>
-    <ul>
-      <li>1940er Jahre: Einführung der von-Neumann‑Architektur – der Wegbereiter für programmierbare Computer.</li>
-      <li>1970er Jahre: Entwicklung des Mikroprozessors – ermöglichte Personal Computer.</li>
-      <li>21. Jahrhundert: Fortschritte in Quantencomputertechnik und künstlicher Intelligenz.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Rechnerarchitektur von Neumann erklärt</h2>
-    <p>
-      Dieses Modell, benannt nach dem Mathematiker John von Neumann, definiert einen Computer mit fünf
-      Hauptkomponenten:
-    </p>
-    <ul>
-      <li>Eine Recheneinheit (CPU)</li>
-      <li>Ein Speicher</li>
-      <li>Ein Eingabegerät</li>
-      <li>Ein Ausgabegerät</li>
-      <li>Ein Steuerwerk, das die Befehlsabarbeitung steuert</li>
-    </ul>
-    <p>
-      Im Herzen der Architektur steht das Prinzip, dass Computerprogramme und Daten im selben
-      Speicherbereich gespeichert werden.
-    </p>
-  </section>
+    <section id="weiteres">
+      <h2>Weiterführende Infos</h2>
+      <p>
+        Mehr auf 
+        <a href="https://de.wikipedia.org/wiki/Rechnerarchitektur" class="external" target="_blank">
+          Wikipedia – Rechnerarchitektur
+        </a> und 
+        <a href="https://www.studysmarter.de/studium/informatik-studium/systemarchitektur/rechnerarchitektur-prinzipien/" class="external" target="_blank">
+          StudySmarter – Rechnerarchitektur Prinzipien
+        </a>.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
 
