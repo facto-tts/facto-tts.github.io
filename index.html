@@ -100,6 +100,11 @@
       <p>
         Rechnerarchitektur beschreibt die vom Programmierer wahrgenommenen Eigenschaften eines Systems – und unterscheidet diese von technischer Implementierung und Hardwareorganisation.
       </p>
+      <p>
+        Ergänzend umfasst der Begriff auch die Spezifikation der Instruktionsmenge (Instruction Set Architecture, ISA),
+        die Organisation von Recheneinheiten, Speicherhierarchien und Ein‑/Ausgabeschnittstellen sowie Leistungs‑
+        und Energiecharakteristika. Die ISA ist die Vertragsschicht zwischen Hardware und Software. Änderungen an der ISA beeinflussen Compiler, Betriebssysteme und Anwendungssoftware.
+      </p>
     </section>
 
     <section id="grundkomponenten">
@@ -112,6 +117,19 @@
       <p>
         Die Komponenten sind durch Buse verbunden, die für Datentransfer und Kommunikation zuständig sind.
       </p>
+      <p>
+        Detaillierter: Die CPU besteht aus der arithmetisch‑logischen Einheit (ALU) für Rechen‑ und Logikoperationen,
+        dem Steuerwerk (Control Unit) für Takt, Befehlsdekodierung und Sequenzsteuerung sowie Registern als sehr schneller, begrenzter Speicher nahe der ALU.
+        Register speichern Operanden, Adressen und Statusbits und sind oft der schnellste Speicherort in einem System.
+      </p>
+      <p>
+        Die Speicherhierarchie gliedert sich typischerweise in Register → L1‑Cache → L2/L3‑Cache → Hauptspeicher (RAM) → Sekundärspeicher (SSD/HDD).
+        Caches nutzen räumliche und zeitliche Lokalität, um Zugriffszeiten zu verkürzen. DMA (Direct Memory Access) erlaubt Peripheriegeräten, Daten direkt in den Speicher zu transferieren ohne die CPU stark zu belasten.
+      </p>
+      <p>
+        Bussysteme und Schnittstellen (z. B. PCIe, USB, SATA) regeln Bandbreite, Latenz und Protokolle für Peripheriegeräte.
+        Moderne Systeme verwenden zusätzlich Interconnects für Multi‑Core und Multi‑Socket‑Kommunikation.
+      </p>
     </section>
 
     <section id="bedeutung">
@@ -120,6 +138,10 @@
         Rechnerarchitektur ist essentiell – sie ermöglicht effizientes Zusammenspiel von Hardware und Software,
         Verbesserung der Leistung, Energieeffizienz und die Grundlage für Innovationen wie Quantencomputer.
       </p>
+      <p>
+        Konkrete Auswirkungen: Eine effiziente Architektur verkürzt Programmlaufzeiten, reduziert Stromverbrauch und ermöglicht bessere Skalierung auf Mehrkern‑ und verteilte Systeme.
+        Die Wahl der ISA beeinflusst Compileroptimierungen und die Portierung von Software. Architekturentscheidungen bestimmen auch Sicherheitsmerkmale wie Speicherschutz oder Trusted Execution Environments.
+      </p>
     </section>
 
     <section id="evolution">
@@ -127,8 +149,15 @@
       <ul>
         <li>1956‑1963 (2. Generation): Transistoren ersetzen Röhren → kompaktere, verlässlichere Computer</li>
         <li>1964‑1971 (3. Gen.): Integrierte Schaltkreise (ICs) → höhere Effizienz & geringe Größe</li>
-        <li>1971–heute (4. Gen.): Mikroprozessoren → PC-Revolution (z. B. Intel 4004)</li>
+        <li>1971–heute (4. Gen.): Mikroprozessoren → PC‑Revolution (z. B. Intel 4004)</li>
       </ul>
+      <p>
+        Historisch bedeutend war das IBM System/360 (1964). Es führte die Idee einer kompatiblen Maschinenarchitektur über mehrere Leistungsstufen ein.
+        Später ermöglichte die Integration von Schaltkreisen und schliesslich der Mikroprozessoren den massenhaften Einsatz von Computern in allen Bereichen.
+      </p>
+      <p>
+        Moderne Entwicklungen umfassen Multi‑Core‑Designs, heterogene Architekturen (CPU + GPU + NPUs), Asymmetric Multicore, sowie Spezialbeschleuniger für maschinelles Lernen.
+      </p>
     </section>
 
     <section id="vonneumann">
@@ -157,12 +186,11 @@
         In diesem Modell (von 1945) teilen sich Programme und Daten den Speicher und dieselben Buse.
         Ein Fetch und Datenzugriff können nicht gleichzeitig erfolgen – ein Flaschenhals, bekannt als "Von‑Neumann Bottleneck".
       </p>
-      <ul>
-        <li>CPU</li>
-        <li>Speicher</li>
-        <li>Eingabe-/Ausgabe</li>
-        <li>Steuerwerk</li>
-      </ul>
+      <p>
+        Ergänzend: Im Gegensatz zur Harvard‑Architektur, die getrennte Speicher und Busse für Befehle und Daten nutzt,
+        ist die Von‑Neumann‑Architektur einfacher zu realisieren und flexibler bei der Programmspeicherung. Viele moderne CPUs verwenden hybride Ansätze,
+        beispielsweise getrennte Level‑1‑Caches für Instruktionen und Daten, um den Nachteil zu mindern.
+      </p>
     </section>
 
     <section id="risc-cisc">
@@ -171,12 +199,45 @@
         RISC‑Architekturen setzen auf einfache, schnelle Befehle, meist in fester Länge, ideal für Pipelining.
         CISC‑Architekturen bieten komplexere Befehle mit mehreren Operationen pro Befehl.
       </p>
-      <pre>
-        RISC:  Einfache Befehle -> Schnelle Ausführung
-        CISC: Komplexe
-::contentReference[oaicite:0]{index=0}
- 
+      <p>
+        Detaillierter: RISC reduziert die Anzahl der Instruktionszyklen pro Befehl und vereinfacht das Steuerwerk. Das erleichtert tiefes Pipelining und aggressive Taktoptimierung.
+        CISC versucht hingegen, durch komplexe, multifunktionale Instruktionen Codegröße zu reduzieren und bestimmte Sequenzen in Hardware zu binden.
+      </p>
+      <p>
+        Beispiele: ARM steht für eine dominante RISC‑Familie in mobilen Geräten. x86 ist historisch CISC‑basiert. Moderne x86‑CPUs verwenden interne Mikroops und Übersetzungsschichten,
+        wodurch die einfache RISC/CISC‑Gegensatzlinie verschwimmt.
+      </p>
+    </section>
 
+    <section id="pipeline-cache">
+      <h2>Pipeline & Cache</h2>
+      <p>
+        Pipelining zerlegt die Ausführung eines Befehls in mehrere Stufen (z. B. Fetch, Decode, Execute, Memory, Writeback),
+        so können verschiedene Instruktionen gleichzeitig in unterschiedlichen Stufen bearbeitet werden. Dadurch steigt der Durchsatz.
+      </p>
+      <p>
+        Probleme: Hazards können Pipelining verringern. Struktur‑, Daten‑ und Kontroll‑Hazards führen zu Stalls oder erfordern Techniken wie Forwarding, Hazard Detection und Branch Prediction.
+        Branch Prediction vermindert Zweigstrafen durch Vorhersage und speculative execution.
+      </p>
+      <p>
+        Cache‑Prinzip: Ein mehrstufiges Cache‑System (L1, L2, L3) hält kürzlich oder häufig genutzte Daten nahe an der CPU. Caches arbeiten mit Cache‑Lines, Valid‑ und Dirty‑Bits sowie Ersatzstrategien wie LRU.
+        Gute Programme nutzen Lokalität, um Cache‑Trefferwahrscheinlichkeiten zu erhöhen und Speicherzugriffe zu minimieren.
+      </p>
+    </section>
 
+    <section id="weiteres">
+      <h2>Weiterführende Infos</h2>
+      <p>
+        Themen zur Vertiefung: ISA‑Design, Speicher‑Kohärenz in Mehrkernsystemen, Virtualisierung, Out‑of‑Order‑Execution, Speculation, Energie‑Optimierung, Beschleunigerarchitekturen (GPU, TPU) und Formalverifikation von Architekturen.
+      </p>
+      <p>
+        Für Schule und Studium empfiehlt sich ein Lehrbuch wie "Computer Architecture: A Quantitative Approach" von Hennessy und Patterson sowie Originalarbeiten zur System/360‑Architektur und zur Geschichte der Mikroprozessoren.
+      </p>
+    </section>
+  </main>
 
-
+  <footer>
+    <p>© Technische Informatik — Rechnerarchitektur</p>
+  </footer>
+</body>
+</html>
