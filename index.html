@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC-Bauten und Komponenten</title>
+  <style>
+    /* Grundlegendes Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fb;
+      color: #333;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #4CAF50;
+    }
+
+    /* Inhaltsverzeichnis */
+    .toc {
+      background-color: #f0f0f0;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .toc li {
+      margin: 5px 0;
+    }
+
+    .toc a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .builds {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .build {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .build:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .build h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .build ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .build li {
+      margin: 5px 0;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav a {
+        padding: 10px 20px;
+      }
+
+      .build h3 {
+        font-size: 20px;
+      }
+
+      .build {
+        padding: 10px;
+      }
+
+      .toc {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>PC-Bauten und Komponenten</h1>
+    <p>Finde den besten PC-Build für dein Budget und lerne die wichtigsten Komponenten kennen!</p>
+  </header>
+
+  <!-- Inhaltsverzeichnis (Table of Contents) -->
+  <section class="toc">
+    <h2>Inhaltsverzeichnis</h2>
+    <ul>
+      <li><a href="#builds">PC Builds</a></li>
+      <li><a href="#komponenten">Komponenten</a></li>
+    </ul>
+  </section>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#builds">PC Builds</a>
+    <a href="#komponenten">Komponenten</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section id="builds">
+      <h2>Beliebte PC Builds (Stand September 2025)</h2>
+      <div class="builds">
+        
+        <!-- Build 1000€ -->
+        <div class="build">
+          <h3>1000€ Build (Gaming)</h3>
+          <ul>
+            <li>CPU: AMD Ryzen 5 7500F</li>
+            <li>GPU: NVIDIA GeForce RTX 5060 Ti - 16GB</li>
+            <li>RAM: 32GB Patriot Viper VENOM DDR5-6000 CL30</li>
+            <li>Motherboard: ASUS TUF Gaming B650-Plus WIFI</li>
+            <li>Storage: 1TB WD Blue SN5000</li>
+            <li>Case: DeepCool CC560 ARGB V2</li>
+          </ul>
+        </div>
+
+        <!-- Build 2000€ -->
+        <div class="build">
+          <h3>2000€ Build (High-End Gaming)</h3>
+          <ul>
+            <li>CPU: AMD Ryzen 7 7800X3D</li>
+            <li>GPU: NVIDIA GeForce RTX 5080 - 16GB</li>
+            <li>RAM: 32GB ADATA XPG LANCER BLADE RGB Black</li>
+            <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
+            <li>Storage: 1 TB Lexar NM790</li>
+            <li>Case: Silentware Air 100</li>
+          </ul>
+        </div>
+
+        <!-- High-End Build 3500€ -->
+        <div class="build">
+          <h3>3500€ Build (Extreme Gaming)</h3>
+          <ul>
+            <li>CPU: AMD Ryzen 7 9800X3D</li>
+            <li>GPU: NVIDIA GeForce RTX 5090 - 32GB</li>
+            <li>RAM: 64GB Kingston FURY Beast RGB DDR5</li>
+            <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
+            <li>Storage: 2 TB Kingston KC3000 (NVMe SSD)</li>
+            <li>Case: Arctic Liquid Freezer III Pro 360 A-RGB, schwarz</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="komponenten">
+      <h2>Wichtige PC-Komponenten</h2>
+      <p>Hier sind die wichtigsten Komponenten, die du bei einem PC-Build berücksichtigen solltest:</p>
+      <ul>
+        <li><strong>CPU (Prozessor):</strong> Das "Gehirn" deines PCs. Wählt man basierend auf Performance und Budget (Intel oder AMD).</li>
+        <li><strong>GPU (Grafikkarte):</strong> Entscheidend für Gaming und Video-Bearbeitung. NVIDIA und AMD bieten verschiedene Modelle.</li>
+        <li><strong>RAM (Arbeitsspeicher):</strong> 16GB sind heutzutage der Standard, für intensivere Anwendungen empfiehlt sich 32GB.</li>
+        <li><strong>Motherboard:</strong> Es verbindet alle Komponenten miteinander. Achte auf kompatible Sockel und Anschlüsse.</li>
+        <li><strong>Storage:</strong> SSDs bieten schnelles Booten und Ladevorgänge. HDDs bieten viel Speicher für wenig Geld.</li>
+        <li><strong>Netzteil:</strong> Achte darauf, dass es genügend Watt für dein System liefert (mind. 80+ Gold zertifiziert).</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Weitere Links und Ressourcen:</p>
+    <a href="https://www.hardwaredealz.com" target="_blank">HardwareDealz</a>
+    <a href="https://www.amazon.de" target="_blank">Amazon</a>
+    <a href="https://www
