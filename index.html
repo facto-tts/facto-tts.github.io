@@ -1,362 +1,278 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PC-Bauten und Komponenten</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Builds und Spiele Leistung</title>
   <style>
-    /* Farbvariablen für einfache Anpassung */
-    :root {
-      --green: #27ae60;       /* Hauptgrün */
-      --green-2: #4CAF50;     /* Sekundäres Grün */
-      --green-dark: #1e8449;  /* Dunkleres Grün für Kontrast */
-      --bg: #f4f7fb;
-      --card-bg: #ffffff;
-      --muted: #6b7280;
-      --dark: #222;
-    }
-
-    /* Grundlegendes Styling */
     body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
-      color: #333;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 20px;
+      color: #222;
     }
 
-    /* Header Styling - grüner Verlauf */
-    header {
-      background: linear-gradient(90deg, var(--green-2), var(--green));
+    
+    header, footer {
+      background-color: #4CAF50;
       color: white;
       text-align: center;
-      padding: 22px 16px;
-      box-shadow: 0 4px 8px rgba(39, 174, 96, 0.12);
+      padding: 15px;
+      border-radius: 8px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 0.2px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    header p {
-      font-size: 18px;
-      opacity: 0.95;
-    }
-
-    /* Navigation - dezenter dunkler Hintergrund, aktive Links grün */
     nav {
-      display: flex;
-      justify-content: center;
-      background-color: #111;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      margin: 20px 0;
+      text-align: center;
+      position: sticky;
+      
+      background-color: #fff;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 5;
     }
 
     nav a {
-      color: white;
+      margin: 0 10px;
       text-decoration: none;
-      padding: 13px 22px;
-      text-align: center;
-      transition: background-color 0.2s, color 0.2s;
-      position: relative;
+      color: #4CAF50;
+      font-weight: bold;
+      position: sticky;
+
+
+
+
+
+
+
+	}
+
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background-color: rgba(39,174,96,0.08);
-      color: var(--green-2);
+    section {
+      background-color: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      
+position: sticky;
+
+
+	border-radius: 8px;
+      box-shadow: 1px 1px 5px #ccc;
     }
 
-    /* Aktiver Link erhält grüne Unterstreichung */
-    nav a.active {
-      color: white;
+    h2 {
+      color: #4CAF50;
     }
 
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 6px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--green-2), var(--green-dark));
-      border-radius: 3px;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    /* Inhaltsverzeichnis */
-    .toc {
-      background-color: #f9fcf9;
-      padding: 16px;
-      margin: 20px auto;
-      border-radius: 10px;
-      max-width: 1100px;
-      border-left: 6px solid var(--green);
-      box-shadow: 0 2px 6px rgba(39,174,96,0.06);
-    }
-
-    .toc h2 { margin-top: 0; }
-
-    .toc ul { list-style-type: none; padding: 0; }
-
-    .toc li { margin: 6px 0; }
-
-    .toc a { color: var(--green-dark); text-decoration: none; font-weight: 600; }
-
-    .toc a:hover { text-decoration: underline; }
-
-    /* Main Content */
-    main { padding: 20px; max-width: 1100px; margin: 0 auto; }
-
-    h2 { color: #222; display: flex; align-items: center; gap: 12px; }
-
-    /* kleine grüne Punkt-Ikone vor h2 */
-    h2::before {
-      content: '';
-      width: 10px;
-      height: 10px;
-      background: var(--green);
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 6px;
-    }
-
-    .builds {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
+    li {
+      margin: 6px 0;
     }
 
     .build {
-      background-color: var(--card-bg);
-      border-radius: 10px;
-      padding: 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      border: 2px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .build:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 18px rgba(0,0,0,0.12);
-      border-color: rgba(39,174,96,0.12);
-    }
-
-    /* Grüner Akzentstreifen oben im Card */
-    .build::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 6px;
-      width: 100%;
-      background: linear-gradient(90deg, var(--green-2), var(--green));
+      border: 1px solid #4CAF50;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
     }
 
     .build h3 {
-      font-size: 22px;
-      margin: 10px 0 8px 0;
-      color: var(--green-dark);
+      margin-top: 0;
     }
 
-    .build ul { list-style-type: none; padding: 0; margin: 0 0 12px 0; }
-
-    .build li { margin: 6px 0; color: #333; }
-
-    /* Kleine grüne Labels neben Schlüsselkomponenten */
-    .badge {
-      display: inline-block;
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(39,174,96,0.12);
-      color: var(--green-dark);
-      font-weight: 600;
-      margin-left: 8px;
-    }
-
-    /* Buttons */
     .btn {
       display: inline-block;
-      padding: 10px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid transparent;
-      transition: background-color 0.18s, transform 0.12s;
-      cursor: pointer;
-      background: linear-gradient(180deg, var(--green-2), var(--green));
+      padding: 8px 12px;
+      background-color: #4CAF50;
       color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 8px;
     }
 
-    .btn:active { transform: translateY(1px); }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      background: linear-gradient(90deg, #0f2b16 0%, #09200f 100%);
-      color: #e6f8ef;
-      padding: 22px 12px;
-      margin-top: 30px;
+    .btn:hover {
+      background-color: #45a049;
     }
 
-    footer p { margin: 0 0 8px 0; font-size: 14px; }
-
-    footer a { color: var(--green-2); text-decoration: none; margin: 0 8px; font-weight: 600; }
-
-    footer a:hover { text-decoration: underline; }
-
-    /* Links auf der Seite grün */
-    a { color: var(--green-2); }
-
-    /* Responsive Anpassungen */
+    
     @media (max-width: 768px) {
-      header h1 { font-size: 28px; }
-      header p { font-size: 15px; }
-      nav a { padding: 10px 14px; }
-      .build h3 { font-size: 20px; }
-      .build { padding: 12px; }
-      .toc { padding: 12px; margin: 14px; }
-    }
+      header h1 {
+        font-size: 1.5em;
+      }
 
+      header p {
+        font-size: 1em;
+      }
+
+      nav a {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      section {
+        padding: 10px;
+      }
+
+      .build {
+        padding: 8px;
+      }
+
+      .build h3 {
+        font-size: 1.2em;
+      }
+
+      .btn {
+        padding: 6px 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1>PC-Bauten und Komponenten</h1>
-    <p>Finde den besten PC-Build für dein Budget und lerne die wichtigsten Komponenten kennen!</p>
+    <h1>PC Builds und Spiele Leistung</h1>
+    <p>Finde den passenden PC-Build für dein Budget und erfahre, welche Spiele du damit spielen kannst.</p>
   </header>
 
-  <!-- Inhaltsverzeichnis (Table of Contents) -->
-  <section class="toc">
-    <h2>Inhaltsverzeichnis</h2>
-    <ul>
-      <li><a href="#builds">PC Builds</a></li>
-      <li><a href="#komponenten">Komponenten</a></li>
-    </ul>
-  </section>
-
-  <!-- Navigation -->
   <nav>
-    <a href="#builds" class="active">PC Builds</a>
-    <a href="#komponenten">Komponenten</a>
+    <a href="#builds">PC Builds</a>
+    <a href="#components">Komponenten</a>
   </nav>
 
-  <!-- Main Content -->
   <main>
     <section id="builds">
-      <h2>Beliebte PC Builds (Stand September 2025)</h2>
-      <div class="builds">
-        
-       
-	 <!-- Build 600€ -->
-        <div class="build">
-          <h3>600€ Build (Einsteiger) </h3>
-          <ul>
-            <li>CPU: AMD Ryzen 5 5600</li>
-            <li>GPU: AMD Radeon RX 7600 - 8GB</li>
-            <li>RAM: 16 GB Patriot Viper Steel DDR4-3600 CL17</li>
-            <li>Motherboard: ASRock B550 Phantom Gaming 4</li>
-            <li>Storage: 1TB KIOXIA EXCERIA PLUS G3</li>
-            <li>Case: ADATA XPG Valor Mesh</li>
-          </ul>
-          <a class="btn" href="#">Mehr erfahren</a>
-        </div>
+      <h2>PC Builds (September 2025)</h2>
 
+      <div class="build">
+        <h3>600€ Build (Einsteiger)</h3>
+        <ul>
+          <li>CPU: AMD Ryzen 5 5600</li>
+          <li>GPU: AMD Radeon RX 7600 - 8GB</li>
+          <li>RAM: 16 GB DDR4-3600</li>
+          <li>Motherboard: ASRock B550 Phantom Gaming 4</li>
+          <li>Storage: 1TB KIOXIA EXCERIA PLUS G3</li>
+          <li>Case: ADATA XPG Valor Mesh</li>
+        </ul>
+        <p><strong>Spieleleistung:</strong></p>
+        <ul>
+          <li>1080p: 80-150 FPS in Esports und leichteren Spielen (Fortnite, CS2)</li>
+          <li>1080p: 60-90 FPS in AAA-Titeln mit hohen Einstellungen (Cyberpunk 2077 ~86 FPS)</li>
+          <li>1440p: 50-80 FPS bei mittleren bis hohen Einstellungen</li>
+        </ul>
+        <a href="#" class="btn">Mehr erfahren</a>
+      </div>
 
+      <div class="build">
+        <h3>1000€ Build (Gaming)</h3>
+        <ul>
+          <li>CPU: AMD Ryzen 5 7500F</li>
+          <li>GPU: NVIDIA GeForce RTX 5060 Ti - 16GB</li>
+          <li>RAM: 32 GB DDR5-6000</li>
+          <li>Motherboard: ASUS TUF Gaming B650-Plus WIFI</li>
+          <li>Storage: 1TB WD Blue SN5000</li>
+          <li>Case: DeepCool CC560 ARGB V2</li>
+        </ul>
+        <p><strong>Spieleleistung:</strong></p>
+        <ul>
+          <li>1080p: 120-200 FPS in Esports und hohen Einstellungen</li>
+          <li>1440p: 80-120 FPS in vielen AAA-Titeln (ohne oder mit reduziertem Raytracing)</li>
+        </ul>
+        <a href="#" class="btn">Mehr erfahren</a>
+      </div>
 
-	 <!-- Build 1000€ -->
-        <div class="build">
-          <h3>1000€ Build (Gaming) </h3>
-          <ul>
-            <li>CPU: AMD Ryzen 5 7500F</li>
-            <li>GPU: NVIDIA GeForce RTX 5060 Ti - 16GB</li>
-            <li>RAM: 32GB Patriot Viper VENOM DDR5-6000 CL30</li>
-            <li>Motherboard: ASUS TUF Gaming B650-Plus WIFI</li>
-            <li>Storage: 1TB WD Blue SN5000</li>
-            <li>Case: DeepCool CC560 ARGB V2</li>
-          </ul>
-          <a class="btn" href="#">Mehr erfahren</a>
-        </div>
+      <div class="build">
+        <h3>1500€ Build (Medium)</h3>
+        <ul>
+          <li>CPU: AMD Ryzen 7 9700X</li>
+          <li>GPU: NVIDIA GeForce RTX 5070 - 12GB</li>
+          <li>RAM: 32 GB DDR5-6000</li>
+          <li>Motherboard: ASRock B850 Pro RS WiFi</li>
+          <li>Storage: 1TB WD Blue SN5000</li>
+          <li>Case: Silentware Titan</li>
+        </ul>
+        <p><strong>Spieleleistung:</strong></p>
+        <ul>
+          <li>1440p: 100+ FPS bei Ultra oder hohen Einstellungen</li>
+          <li>4K: 40-70 FPS, mit DLSS oder Frame-Generation spielbar</li>
+        </ul>
+        <a href="#" class="btn">Mehr erfahren</a>
+      </div>
 
-       
-	
-	<!-- High-End Build 1500€ -->
-        <div class="build">
-          <h3>1500€ Build (Medium) </h3>
-          <ul>
-            <li>CPU: AMD Ryzen 7 9700X</li>
-            <li>GPU: NVIDIA GeForce RTX 5070 - 12GB</li>
-            <li>RAM: 32GB Patriot Viper VENOM DDR5-6000 CL30</li>
-            <li>Motherboard: ASRock B850 Pro RS WiFi</li>
-            <li>Storage: 1TB WD Blue SN5000	</li>
-            <li>Case: Silentware Titan</li>
-          </ul>
-          <a class="btn" href="#">Mehr erfahren</a>
-        </div>
+      <div class="build">
+        <h3>2000€ Build (High-End Gaming)</h3>
+        <ul>
+          <li>CPU: AMD Ryzen 7 7800X3D</li>
+          <li>GPU: NVIDIA GeForce RTX 5080 - 16GB</li>
+          <li>RAM: 32 GB ADATA XPG LANCER BLADE RGB</li>
+          <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
+          <li>Storage: 1 TB Lexar NM790</li>
+          <li>Case: Silentware Air 100</li>
+        </ul>
+        <p><strong>Spieleleistung:</strong></p>
+        <ul>
+          <li>1440p: 120-200+ FPS in den meisten Spielen</li>
+          <li>4K: 60-100 FPS bei Ultra, oft mit Upscaling oder Frame-Generation</li>
+        </ul>
+        <a href="#" class="btn">Mehr erfahren</a>
+      </div>
 
-
-
-
-	 <!-- Build 2000€ -->
-        <div class="build">
-          <h3>2000€ Build (High-End Gaming) </h3>
-          <ul>
-            <li>CPU: AMD Ryzen 7 7800X3D</li>
-            <li>GPU: NVIDIA GeForce RTX 5080 - 16GB</li>
-            <li>RAM: 32GB ADATA XPG LANCER BLADE RGB Black</li>
-            <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
-            <li>Storage: 1 TB Lexar NM790</li>
-            <li>Case: Silentware Air 100</li>
-          </ul>
-          <a class="btn" href="#">Mehr erfahren</a>
-        </div>
-
-        <!-- High-End Build 3500€ -->
-        <div class="build">
-          <h3>3500€ Build (Extreme Gaming) </h3>
-          <ul>
-            <li>CPU: AMD Ryzen 7 9800X3D</li>
-            <li>GPU: NVIDIA GeForce RTX 5090 - 32GB</li>
-            <li>RAM: 64GB Kingston FURY Beast RGB DDR5</li>
-            <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
-            <li>Storage: 2 TB Kingston KC3000 (NVMe SSD)</li>
-            <li>Case: Arctic Liquid Freezer III Pro 360 A-RGB, schwarz</li>
-          </ul>
-          <a class="btn" href="#">Mehr erfahren</a>
-        </div>
-
+      <div class="build">
+        <h3>3500€ Build (Extreme Gaming)</h3>
+        <ul>
+          <li>CPU: AMD Ryzen 7 9800X3D</li>
+          <li>GPU: NVIDIA GeForce RTX 5090 - 32GB</li>
+          <li>RAM: 64 GB DDR5</li>
+          <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
+          <li>Storage: 2 TB Kingston KC3000 NVMe SSD</li>
+          <li>Case: Arctic Liquid Freezer III Pro 360 A-RGB</li>
+        </ul>
+        <p><strong>Spieleleistung:</strong></p>
+        <ul>
+          <li>4K Ultra + Raytracing: 100+ FPS in den meisten AAA-Spielen</li>
+          <li>Sehr gut für anspruchsvolle Titel mit maximalen Details und RT</li>
+        </ul>
+        <a href="#" class="btn">Mehr erfahren</a>
       </div>
     </section>
 
-    <section id="komponenten">
+    <section id="components">
       <h2>Wichtige PC-Komponenten</h2>
-      <p>Hier sind die wichtigsten Komponenten, die du bei einem PC-Build berücksichtigen solltest:</p>
       <ul>
-        <li><strong>CPU (Prozessor):</strong> Das "Gehirn" deines PCs. Wählt man basierend auf Performance und Budget (Intel oder AMD).</li>
-        <li><strong>GPU (Grafikkarte):</strong> Entscheidend für Gaming und Video-Bearbeitung. NVIDIA und AMD bieten verschiedene Modelle.</li>
-        <li><strong>RAM (Arbeitsspeicher):</strong> 32GB sind heutzutage der Standard, für intensivere Anwendungen empfiehlt sich 64GB.</li>
-        <li><strong>Motherboard:</strong> Es verbindet alle Komponenten miteinander. Achte auf kompatible Sockel und Anschlüsse.</li>
-        <li><strong>Storage:</strong> SSDs bieten schnelles Booten und Ladevorgänge. HDDs bieten viel Speicher für wenig Geld.</li>
-        <li><strong>Netzteil:</strong> Achte darauf, dass es genügend Watt für dein System liefert (mind. 80+ Gold zertifiziert).</li>
+        <li><strong>CPU (Prozessor):</strong> Das Herzstück des PCs. Entscheidet über Rechenleistung.</li>
+        <li><strong>GPU (Grafikkarte):</strong> Wichtig für Spiele und Grafikleistung.</li>
+        <li><strong>RAM (Arbeitsspeicher):</strong> Empfohlen mindestens 16 GB, besser 32 GB für Gaming und Multimedia.</li>
+        <li><strong>Motherboard:</strong> Verbindet alle Komponenten.</li>
+        <li><strong>Speicher (SSD/HDD):</strong> SSDs sind schnell und sorgen für schnelle Ladezeiten.</li>
+        <li><strong>Netzteil:</strong> Liefert Strom, sollte genug Watt und Qualität haben.</li>
       </ul>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>Weitere Links und Ressourcen:</p>
-    <a href="https://www.hardwaredealz.com" target="_blank" rel="noopener">HardwareDealz</a>
-    <a href="https://www.amazon.de" target="_blank" rel="noopener">Amazon</a>
-    <a href="https://www.computerbase.de" target="_blank" rel="noopener">ComputerBase</a>
+    <p>Weitere Links:</p>
+    <p>
+      <a href="https://www.hardwaredealz.com" target="_blank" rel="noopener">HardwareDealz</a> |
+      <a href="https://www.amazon.de" target="_blank" rel="noopener">Amazon</a> |
+      <a href="https://www.computerbase.de" target="_blank" rel="noopener">ComputerBase</a>
+    </p>
   </footer>
 
 </body>
 </html>
+
+
 
