@@ -1,278 +1,182 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PC Builds und Spiele Leistung</title>
+  <meta charset="UTF-8">
+  <title>PC Builds & Zubehör</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: sans-serif;
       margin: 20px;
-      color: #222;
     }
 
-    
-    header, footer {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav {
-      margin: 20px 0;
-      text-align: center;
-      position: sticky;
-      
-      background-color: #fff;
-      padding: 10px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      z-index: 5;
-    }
-
-    nav a {
-      margin: 0 10px;
+    a {
+      color: #90caf9;
       text-decoration: none;
-      color: #4CAF50;
-      font-weight: bold;
-      position: sticky;
+    }
 
-
-
-
-
-
-
-	}
-
-
-    nav a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    section {
-      background-color: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      
-position: sticky;
-
-
-	border-radius: 8px;
-      box-shadow: 1px 1px 5px #ccc;
-    }
-
-    h2 {
-      color: #4CAF50;
+    h1, h2, h3 {
+      color: #ffffff;
     }
 
     ul {
-      list-style-type: none;
-      padding-left: 0;
+      margin-bottom: 20px;
     }
 
     li {
-      margin: 6px 0;
+      margin: 5px 0;
     }
 
-    .build {
-      border: 1px solid #4CAF50;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-    }
-
-    .build h3 {
-      margin-top: 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 8px 12px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 8px;
-    }
-
-    .btn:hover {
-      background-color: #45a049;
-    }
-
-    
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.5em;
-      }
-
-      header p {
-        font-size: 1em;
-      }
-
-      nav a {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      section {
-        padding: 10px;
-      }
-
-      .build {
-        padding: 8px;
-      }
-
-      .build h3 {
-        font-size: 1.2em;
-      }
-
-      .btn {
-        padding: 6px 10px;
-      }
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 30px 0;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>PC Builds und Spiele Leistung</h1>
-    <p>Finde den passenden PC-Build für dein Budget und erfahre, welche Spiele du damit spielen kannst.</p>
-  </header>
+  <h1>PC Builds & Zubehör (September 2025)</h1>
 
-  <nav>
-    <a href="#builds">PC Builds</a>
-    <a href="#components">Komponenten</a>
-  </nav>
+  <h2>Inhaltsverzeichnis</h2>
+  <ul>
+    <li><a href="#builds">PC Builds</a></li>
+    <li><a href="#components">Komponenten</a></li>
+    <li><a href="#peripherie">Monitore & Peripherie</a></li>
+    <li><a href="#links">Externe Links</a></li>
+  </ul>
 
-  <main>
-    <section id="builds">
-      <h2>PC Builds (September 2025)</h2>
+  <hr>
 
-      <div class="build">
-        <h3>600€ Build (Einsteiger)</h3>
-        <ul>
-          <li>CPU: AMD Ryzen 5 5600</li>
-          <li>GPU: AMD Radeon RX 7600 - 8GB</li>
-          <li>RAM: 16 GB DDR4-3600</li>
-          <li>Motherboard: ASRock B550 Phantom Gaming 4</li>
-          <li>Storage: 1TB KIOXIA EXCERIA PLUS G3</li>
-          <li>Case: ADATA XPG Valor Mesh</li>
-        </ul>
-        <p><strong>Spieleleistung:</strong></p>
-        <ul>
-          <li>1080p: 80-150 FPS in Esports und leichteren Spielen (Fortnite, CS2)</li>
-          <li>1080p: 60-90 FPS in AAA-Titeln mit hohen Einstellungen (Cyberpunk 2077 ~86 FPS)</li>
-          <li>1440p: 50-80 FPS bei mittleren bis hohen Einstellungen</li>
-        </ul>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
+  <h2 id="builds">PC Builds</h2>
 
-      <div class="build">
-        <h3>1000€ Build (Gaming)</h3>
-        <ul>
-          <li>CPU: AMD Ryzen 5 7500F</li>
-          <li>GPU: NVIDIA GeForce RTX 5060 Ti - 16GB</li>
-          <li>RAM: 32 GB DDR5-6000</li>
-          <li>Motherboard: ASUS TUF Gaming B650-Plus WIFI</li>
-          <li>Storage: 1TB WD Blue SN5000</li>
-          <li>Case: DeepCool CC560 ARGB V2</li>
-        </ul>
-        <p><strong>Spieleleistung:</strong></p>
-        <ul>
-          <li>1080p: 120-200 FPS in Esports und hohen Einstellungen</li>
-          <li>1440p: 80-120 FPS in vielen AAA-Titeln (ohne oder mit reduziertem Raytracing)</li>
-        </ul>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
+  <h3>600€ Build (Einsteiger)</h3>
+  <ul>
+    <li>CPU: AMD Ryzen 5 5600</li>
+    <li>GPU: AMD Radeon RX 7600 - 8GB</li>
+    <li>RAM: 16 GB DDR4-3600</li>
+    <li>Mainboard: ASRock B550 Phantom Gaming 4</li>
+    <li>Speicher: 1TB KIOXIA EXCERIA PLUS G3</li>
+    <li>Gehäuse: ADATA XPG Valor Mesh</li>
+  </ul>
+  <p><strong>Spieleleistung:</strong></p>
+  <ul>
+    <li>1080p: 80-150 FPS in Esports</li>
+    <li>1080p: 60-90 FPS in AAA-Titeln</li>
+    <li>1440p: 50-80 FPS bei mittleren Einstellungen</li>
+  </ul>
 
-      <div class="build">
-        <h3>1500€ Build (Medium)</h3>
-        <ul>
-          <li>CPU: AMD Ryzen 7 9700X</li>
-          <li>GPU: NVIDIA GeForce RTX 5070 - 12GB</li>
-          <li>RAM: 32 GB DDR5-6000</li>
-          <li>Motherboard: ASRock B850 Pro RS WiFi</li>
-          <li>Storage: 1TB WD Blue SN5000</li>
-          <li>Case: Silentware Titan</li>
-        </ul>
-        <p><strong>Spieleleistung:</strong></p>
-        <ul>
-          <li>1440p: 100+ FPS bei Ultra oder hohen Einstellungen</li>
-          <li>4K: 40-70 FPS, mit DLSS oder Frame-Generation spielbar</li>
-        </ul>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
+  <h3>1000€ Build (Gaming)</h3>
+  <ul>
+    <li>CPU: AMD Ryzen 5 7500F</li>
+    <li>GPU: NVIDIA GeForce RTX 5060 Ti - 16GB</li>
+    <li>RAM: 32 GB DDR5-6000</li>
+    <li>Mainboard: ASUS TUF Gaming B650-Plus WIFI</li>
+    <li>Speicher: 1TB WD Blue SN5000</li>
+    <li>Gehäuse: DeepCool CC560 ARGB V2</li>
+  </ul>
+  <p><strong>Spieleleistung:</strong></p>
+  <ul>
+    <li>1080p: 120-200 FPS</li>
+    <li>1440p: 80-120 FPS</li>
+  </ul>
 
-      <div class="build">
-        <h3>2000€ Build (High-End Gaming)</h3>
-        <ul>
-          <li>CPU: AMD Ryzen 7 7800X3D</li>
-          <li>GPU: NVIDIA GeForce RTX 5080 - 16GB</li>
-          <li>RAM: 32 GB ADATA XPG LANCER BLADE RGB</li>
-          <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
-          <li>Storage: 1 TB Lexar NM790</li>
-          <li>Case: Silentware Air 100</li>
-        </ul>
-        <p><strong>Spieleleistung:</strong></p>
-        <ul>
-          <li>1440p: 120-200+ FPS in den meisten Spielen</li>
-          <li>4K: 60-100 FPS bei Ultra, oft mit Upscaling oder Frame-Generation</li>
-        </ul>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
+  <h3>1500€ Build (Medium)</h3>
+  <ul>
+    <li>CPU: AMD Ryzen 7 9700X</li>
+    <li>GPU: NVIDIA GeForce RTX 5070 - 12GB</li>
+    <li>RAM: 32 GB DDR5-6000</li>
+    <li>Mainboard: ASRock B850 Pro RS WiFi</li>
+    <li>Speicher: 1TB WD Blue SN5000</li>
+    <li>Gehäuse: Silentware Titan</li>
+  </ul>
+  <p><strong>Spieleleistung:</strong></p>
+  <ul>
+    <li>1440p: 100+ FPS bei hohen Einstellungen</li>
+    <li>4K: 40-70 FPS mit DLSS</li>
+  </ul>
 
-      <div class="build">
-        <h3>3500€ Build (Extreme Gaming)</h3>
-        <ul>
-          <li>CPU: AMD Ryzen 7 9800X3D</li>
-          <li>GPU: NVIDIA GeForce RTX 5090 - 32GB</li>
-          <li>RAM: 64 GB DDR5</li>
-          <li>Motherboard: GIGABYTE B850 AORUS Elite WIFI7</li>
-          <li>Storage: 2 TB Kingston KC3000 NVMe SSD</li>
-          <li>Case: Arctic Liquid Freezer III Pro 360 A-RGB</li>
-        </ul>
-        <p><strong>Spieleleistung:</strong></p>
-        <ul>
-          <li>4K Ultra + Raytracing: 100+ FPS in den meisten AAA-Spielen</li>
-          <li>Sehr gut für anspruchsvolle Titel mit maximalen Details und RT</li>
-        </ul>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
-    </section>
+  <h3>2000€ Build (High-End)</h3>
+  <ul>
+    <li>CPU: AMD Ryzen 7 7800X3D</li>
+    <li>GPU: NVIDIA GeForce RTX 5080 - 16GB</li>
+    <li>RAM: 32 GB ADATA XPG LANCER BLADE RGB</li>
+    <li>Mainboard: GIGABYTE B850 AORUS Elite WIFI7</li>
+    <li>Speicher: 1 TB Lexar NM790</li>
+    <li>Gehäuse: Silentware Air 100</li>
+  </ul>
+  <p><strong>Spieleleistung:</strong></p>
+  <ul>
+    <li>1440p: 120-200+ FPS</li>
+    <li>4K: 60-100 FPS bei Ultra</li>
+  </ul>
 
-    <section id="components">
-      <h2>Wichtige PC-Komponenten</h2>
-      <ul>
-        <li><strong>CPU (Prozessor):</strong> Das Herzstück des PCs. Entscheidet über Rechenleistung.</li>
-        <li><strong>GPU (Grafikkarte):</strong> Wichtig für Spiele und Grafikleistung.</li>
-        <li><strong>RAM (Arbeitsspeicher):</strong> Empfohlen mindestens 16 GB, besser 32 GB für Gaming und Multimedia.</li>
-        <li><strong>Motherboard:</strong> Verbindet alle Komponenten.</li>
-        <li><strong>Speicher (SSD/HDD):</strong> SSDs sind schnell und sorgen für schnelle Ladezeiten.</li>
-        <li><strong>Netzteil:</strong> Liefert Strom, sollte genug Watt und Qualität haben.</li>
-      </ul>
-    </section>
-  </main>
+  <h3>3500€ Build (Extreme)</h3>
+  <ul>
+    <li>CPU: AMD Ryzen 7 9800X3D</li>
+    <li>GPU: NVIDIA GeForce RTX 5090 - 32GB</li>
+    <li>RAM: 64 GB DDR5</li>
+    <li>Mainboard: GIGABYTE B850 AORUS Elite WIFI7</li>
+    <li>Speicher: 2 TB Kingston KC3000 NVMe SSD</li>
+    <li>Gehäuse: Arctic Liquid Freezer III Pro 360 A-RGB</li>
+  </ul>
+  <p><strong>Spieleleistung:</strong></p>
+  <ul>
+    <li>4K Ultra + Raytracing: 100+ FPS</li>
+    <li>Sehr gut für maximale Details</li>
+  </ul>
 
-  <footer>
-    <p>Weitere Links:</p>
-    <p>
-      <a href="https://www.hardwaredealz.com" target="_blank" rel="noopener">HardwareDealz</a> |
-      <a href="https://www.amazon.de" target="_blank" rel="noopener">Amazon</a> |
-      <a href="https://www.computerbase.de" target="_blank" rel="noopener">ComputerBase</a>
-    </p>
-  </footer>
+  <hr>
 
-</body>
-</html>
+  <h2 id="components">Grundlegende Komponenten</h2>
+  <ul>
+    <li><strong>CPU:</strong> Zentrale Recheneinheit</li>
+    <li><strong>GPU:</strong> Grafikprozessor für Spiele</li>
+    <li><strong>RAM:</strong> Arbeitsspeicher (16–64 GB je nach Budget)</li>
+    <li><strong>Mainboard:</strong> Verbindet alle Bauteile</li>
+    <li><strong>Speicher:</strong> SSDs für schnelle Ladezeiten</li>
+    <li><strong>Netzteil:</strong> Wichtige Energiequelle</li>
+  </ul>
 
+  <hr>
+
+  <h2 id="peripherie">Monitore & Peripherie</h2>
+
+  <h3>Budget</h3>
+  <ul>
+    <li>Monitor: AOC 24G2SP (1080p, 165Hz)</li>
+    <li>Maus: Logitech G203</li>
+    <li>Tastatur: Sharkoon Skiller SGK3</li>
+    <li>Headset: HyperX Cloud Stinger</li>
+  </ul>
+
+  <h3>Midrange</h3>
+  <ul>
+    <li>Monitor: Gigabyte M27Q (1440p, 170Hz, IPS)</li>
+    <li>Maus: Glorious Model O</li>
+    <li>Tastatur: Keychron K2 (mechanisch, kabellos)</li>
+    <li>Headset: Corsair HS80 Wireless</li>
+  </ul>
+
+  <h3>High-End</h3>
+  <ul>
+    <li>Monitor: ASUS ROG Swift PG32UQ (4K, 144Hz, HDR600)</li>
+    <li>Maus: Logitech G Pro X Superlight 2</li>
+    <li>Tastatur: SteelSeries Apex Pro</li>
+    <li>Headset: SteelSeries Arctis Nova Pro Wireless</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="links">Externe Links</h2>
+  <p>
+    <a href="https://www.hardwaredealz.com" target="_blank">HardwareDealz</a><br>
+    <a href="https://www.amazon.de" target="_blank">Amazon</a><br>
+    <a href="https://www.computerbase.de" target="_blank">ComputerBase</a>
 
 
